@@ -5,35 +5,63 @@ on:
   push:
 
 jobs:
-  validate:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
-
       - name: Install Rust
         uses: actions-rs/toolchain@v1.0.6
         with:
           override: true
           toolchain: stable
+      - name: Cargo Check
+        uses: actions-rs/cargo@v1.0.1
+        with:
+          command: check
 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          override: true
+          toolchain: stable
+      - name: Clippy
+        uses: actions-rs/clippy-check@v1
+        with:
+          args: --all-features
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          override: true
+          toolchain: stable
       - name: Cargo Format
         uses: actions-rs/cargo@v1.0.1
         with:
           command: fmt
           args: --all -- --check
 
-      - name: Cargo Check
-        uses: actions-rs/cargo@v1.0.1
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1.0.6
         with:
-          command: check
-
-      - name: Clippy Check
-        uses: actions-rs/clippy-check@v1
-        with:
-          args: --all-features
-          token: ${{ secrets.GITHUB_TOKEN }}
-
+          override: true
+          toolchain: stable
       - name: Cargo Test
         uses: actions-rs/cargo@v1.0.1
         with:
