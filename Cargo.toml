@@ -1,0 +1,20 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+[package]
+name = "w"
+description = """
+a work in progress
+"""
+
+edition = "2018"
+version = "0.1.0"
+authors = ["Sean Lingren <sean@lingrino.com>"]
+
+license = "MIT"
+homepage = "https://github.com/lingrino/w"
+repository = "https://github.com/lingrino/w"
+documentation = "https://github.com/lingrino/w"
+
+keywords = ["w", "cli", "unix"]
+categories = ["command-line-utilities", "os"]
+
+[dependencies]
