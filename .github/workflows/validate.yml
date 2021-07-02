@@ -16,7 +16,7 @@ jobs:
           override: true
           toolchain: stable
       - name: Cargo Check
-        uses: actions-rs/cargo@v1.0.1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: check
 
@@ -31,7 +31,7 @@ jobs:
           override: true
           toolchain: stable
       - name: Cargo Clippy
-        uses: actions-rs/cargo@v1.0.1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: clippy
 
@@ -46,7 +46,7 @@ jobs:
           override: true
           toolchain: stable
       - name: Cargo Format
-        uses: actions-rs/cargo@v1.0.1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: fmt
           args: --all -- --check
@@ -62,6 +62,6 @@ jobs:
           override: true
           toolchain: stable
       - name: Cargo Test
-        uses: actions-rs/cargo@v1.0.1
+        uses: actions-rs/cargo@v1.0.3
         with:
           command: test
