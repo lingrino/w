@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Install Rust
-        uses: actions-rs/toolchain@v1.0.6
+        uses: actions-rs/toolchain@v1.0.7
         with:
           override: true
           toolchain: stable
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Install Rust
-        uses: actions-rs/toolchain@v1.0.6
+        uses: actions-rs/toolchain@v1.0.7
         with:
           override: true
           toolchain: stable
@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Install Rust
-        uses: actions-rs/toolchain@v1.0.6
+        uses: actions-rs/toolchain@v1.0.7
         with:
           override: true
           toolchain: stable
@@ -58,7 +58,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: Install Rust
-        uses: actions-rs/toolchain@v1.0.6
+        uses: actions-rs/toolchain@v1.0.7
         with:
           override: true
           toolchain: stable
