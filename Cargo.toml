@@ -18,3 +18,5 @@ keywords = ["w", "cli", "unix"]
 categories = ["command-line-utilities", "os"]
 
 [dependencies]
+heim = "0.0.11"
+smol = "1.2.5"
